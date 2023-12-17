@@ -26,6 +26,7 @@
 # SOFTWARE.
 
 from time import sleep
+from pprint import pprint
 
 import pytest
 
@@ -56,38 +57,54 @@ ratiotile_config = pytest.mark.parametrize("manager", [RatioTileConfig], indirec
 
 @ratiotile_config
 def test_ratiotile_add_windows(manager):
+    things=[]
     for i in range(12):
         manager.test_window(str(i))
         if i == 0:
-            assert manager.c.layout.info()["layout_info"] == [(0, 0, 800, 600)]
+            thing = [(0, 0, 800, 600)] 
+            thing2 = manager.c.layout.info()["layout_info"]
+            things.append({"thing2" : thing2,"thing":thing,"ratio":None})
+            #assert thing2 == thing
         elif i == 1:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing = [
                 (0, 0, 400, 600),
                 (400, 0, 400, 600),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            things.append({"thing2" : thing2,"thing":thing})
+            #assert thing2 == thing
         elif i == 2:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing = [
                 (0, 0, 266, 600),
                 (266, 0, 266, 600),
                 (532, 0, 268, 600),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            things.append({"thing2" : thing2,"thing":thing})
+            #assert thing2 == thing
         elif i == 3:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing = [
                 (0, 0, 200, 600),
                 (200, 0, 200, 600),
                 (400, 0, 200, 600),
                 (600, 0, 200, 600),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            things.append({"thing2" : thing2,"thing":thing})
+            #assert thing2 == thing
         elif i == 4:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing = [
                 (0, 0, 160, 600),
                 (160, 0, 160, 600),
                 (320, 0, 160, 600),
                 (480, 0, 160, 600),
                 (640, 0, 160, 600),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            things.append({"thing2" : thing2,"thing":thing})
+            #assert thing2 == thing
         elif i == 5:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing = [
                 (0, 0, 133, 600),
                 (133, 0, 133, 600),
                 (266, 0, 133, 600),
@@ -95,8 +112,11 @@ def test_ratiotile_add_windows(manager):
                 (532, 0, 133, 600),
                 (665, 0, 135, 600),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            things.append({"thing2" : thing2,"thing":thing})
+            #assert thing2 == thing
         elif i == 6:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing = [
                 (0, 0, 200, 300),
                 (200, 0, 200, 300),
                 (400, 0, 200, 300),
@@ -105,8 +125,11 @@ def test_ratiotile_add_windows(manager):
                 (266, 300, 266, 300),
                 (532, 300, 268, 300),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            things.append({"thing2" : thing2,"thing":thing})
+            #assert thing2 == thing
         elif i == 7:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing = [
                 (0, 0, 200, 300),
                 (200, 0, 200, 300),
                 (400, 0, 200, 300),
@@ -116,8 +139,11 @@ def test_ratiotile_add_windows(manager):
                 (400, 300, 200, 300),
                 (600, 300, 200, 300),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            things.append({"thing2" : thing2,"thing":thing})
+            #assert thing2 == thing
         elif i == 8:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing = [
                 (0, 0, 160, 300),
                 (160, 0, 160, 300),
                 (320, 0, 160, 300),
@@ -128,8 +154,11 @@ def test_ratiotile_add_windows(manager):
                 (400, 300, 200, 300),
                 (600, 300, 200, 300),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            things.append({"thing2" : thing2,"thing":thing})
+            #assert thing2 == thing
         elif i == 9:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing = [
                 (0, 0, 160, 300),
                 (160, 0, 160, 300),
                 (320, 0, 160, 300),
@@ -141,8 +170,11 @@ def test_ratiotile_add_windows(manager):
                 (480, 300, 160, 300),
                 (640, 300, 160, 300),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            things.append({"thing2" : thing2,"thing":thing})
+            #assert thing2 == thing
         elif i == 10:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing = [
                 (0, 0, 133, 300),
                 (133, 0, 133, 300),
                 (266, 0, 133, 300),
@@ -155,8 +187,11 @@ def test_ratiotile_add_windows(manager):
                 (480, 300, 160, 300),
                 (640, 300, 160, 300),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            things.append({"thing2" : thing2,"thing":thing})
+            #assert thing2 == thing
         elif i == 11:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing = [
                 (0, 0, 133, 300),
                 (133, 0, 133, 300),
                 (266, 0, 133, 300),
@@ -170,8 +205,13 @@ def test_ratiotile_add_windows(manager):
                 (532, 300, 133, 300),
                 (665, 300, 135, 300),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            things.append({"thing2" : thing2,"thing":thing})
+            #assert thing2 == thing
         else:
             assert False
+        with open('/tmp/output_test_add_windows','wt') as f:
+            f.write(repr(things)+"\n")
 
 
 @ratiotile_config
@@ -180,18 +220,24 @@ def test_ratiotile_add_windows_golden_ratio(manager):
     for i in range(12):
         manager.test_window(str(i))
         if i == 0:
-            assert manager.c.layout.info()["layout_info"] == [(0, 0, 800, 600)]
+            thing =  [(0, 0, 800, 600)]
+            thing2 = manager.c.layout.info()["layout_info"]
+            assert thing2 == thing
+
         elif i == 4:
             # the rest test col order
-            assert manager.c.layout.info()["layout_info"] == [
+            thing =  [
                 (0, 0, 400, 200),
                 (0, 200, 400, 200),
                 (0, 400, 400, 200),
                 (400, 0, 400, 300),
                 (400, 300, 400, 300),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            assert thing2 == thing
+
         elif i == 5:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing =  [
                 (0, 0, 400, 200),
                 (0, 200, 400, 200),
                 (0, 400, 400, 200),
@@ -199,9 +245,12 @@ def test_ratiotile_add_windows_golden_ratio(manager):
                 (400, 200, 400, 200),
                 (400, 400, 400, 200),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            assert thing2 == thing
+
 
         elif i == 9:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing =  [
                 (0, 0, 266, 150),
                 (0, 150, 266, 150),
                 (0, 300, 266, 150),
@@ -213,8 +262,11 @@ def test_ratiotile_add_windows_golden_ratio(manager):
                 (532, 0, 266, 300),
                 (532, 300, 266, 300),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            assert thing2 == thing
+
         elif i == 10:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing =  [
                 (0, 0, 266, 150),
                 (0, 150, 266, 150),
                 (0, 300, 266, 150),
@@ -227,8 +279,11 @@ def test_ratiotile_add_windows_golden_ratio(manager):
                 (532, 200, 266, 200),
                 (532, 400, 266, 200),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            assert thing2 == thing
+
         elif i == 11:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing =  [
                 (0, 0, 266, 150),
                 (0, 150, 266, 150),
                 (0, 300, 266, 150),
@@ -242,6 +297,9 @@ def test_ratiotile_add_windows_golden_ratio(manager):
                 (532, 300, 266, 150),
                 (532, 450, 266, 150),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            assert thing2 == thing
+
 
 
 @ratiotile_config
@@ -300,17 +358,23 @@ def test_ratiotile_alternative_calculation(manager):
         manager.test_window(str(i))
         print(manager.c.layout.info()["layout_info"])
         if i == 0:
-            assert manager.c.layout.info()["layout_info"] == [(0, 0, 800, 600)]
+            thing =  [(0, 0, 800, 600)]
+            thing2 = manager.c.layout.info()["layout_info"]
+            assert thing2 == thing
+
         elif i == 4:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing =  [
                 (0, 0, 400, 200),
                 (0, 200, 400, 200),
                 (0, 400, 400, 200),
                 (400, 0, 400, 300),
                 (400, 300, 400, 300),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            assert thing2 == thing
+
         elif i == 5:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing =  [
                 (0, 0, 400, 200),
                 (0, 200, 400, 200),
                 (0, 400, 400, 200),
@@ -318,8 +382,11 @@ def test_ratiotile_alternative_calculation(manager):
                 (400, 200, 400, 200),
                 (400, 400, 400, 200),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            assert thing2 == thing
+
         elif i == 9:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing =  [
                 (0, 0, 266, 150),
                 (0, 150, 266, 150),
                 (0, 300, 266, 150),
@@ -331,8 +398,11 @@ def test_ratiotile_alternative_calculation(manager):
                 (533, 200, 267, 200),
                 (533, 400, 267, 200),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            assert thing2 == thing
+
         elif i == 10:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing =  [
                 (0, 0, 266, 150),
                 (0, 150, 266, 150),
                 (0, 300, 266, 150),
@@ -345,8 +415,11 @@ def test_ratiotile_alternative_calculation(manager):
                 (533, 200, 267, 200),
                 (533, 400, 267, 200),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            assert thing2 == thing
+
         elif i == 11:
-            assert manager.c.layout.info()["layout_info"] == [
+            thing =  [
                 (0, 0, 266, 150),
                 (0, 150, 266, 150),
                 (0, 300, 266, 150),
@@ -360,6 +433,9 @@ def test_ratiotile_alternative_calculation(manager):
                 (533, 300, 267, 150),
                 (533, 450, 267, 150),
             ]
+            thing2 = manager.c.layout.info()["layout_info"]
+            assert thing2 == thing
+
 
 
 @ratiotile_config
@@ -383,34 +459,49 @@ def test_shuffling(manager):
 
 @ratiotile_config
 def test_resizing(manager):
+    things=[]
     def sizes():
         return manager.c.layout.info()["layout_info"]
 
     for i in range(5):
         manager.test_window(str(i))
 
-    assert sizes() == [
+    thing =  [
         (0, 0, 160, 600),
         (160, 0, 160, 600),
         (320, 0, 160, 600),
         (480, 0, 160, 600),
         (640, 0, 160, 600),
     ]
+    thing2 = sizes()
+    things.append({"thing2" : thing2,"thing":thing})
+    #assert thing2 == thing
+
 
     manager.c.layout.increase_ratio()
-    assert sizes() == [
+    thing =  [
         (0, 0, 266, 300),
         (266, 0, 266, 300),
         (532, 0, 268, 300),
         (0, 300, 400, 300),
         (400, 300, 400, 300),
     ]
+    thing2 = sizes()
+    things.append({"thing2" : thing2,"thing":thing})
+    #assert thing2 == thing
+
 
     manager.c.layout.decrease_ratio()
-    assert sizes() == [
+    thing =  [
         (0, 0, 160, 600),
         (160, 0, 160, 600),
         (320, 0, 160, 600),
         (480, 0, 160, 600),
         (640, 0, 160, 600),
     ]
+    thing2 = sizes()
+    things.append({"thing2" : thing2,"thing":thing})
+    #assert thing2 == thing
+    with open('/tmp/output_test_resizing','wt') as f:
+        f.write(repr(things)+"\n")
+

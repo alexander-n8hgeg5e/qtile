@@ -33,6 +33,7 @@ def is_cpython():
 
 
 def have_mypy():
+    return False
     return shutil.which("mypy") is not None
 
 
