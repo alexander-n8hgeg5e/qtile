@@ -63,7 +63,7 @@ def test_ratiotile_add_windows(manager):
         if i == 0:
             thing = [(0, 0, 800, 600)] 
             thing2 = manager.c.layout.info()["layout_info"]
-            things.append({"thing2" : thing2,"thing":thing,"ratio":None})
+            things.append({"thing2" : thing2,"thing":thing})
             #assert thing2 == thing
         elif i == 1:
             thing = [
