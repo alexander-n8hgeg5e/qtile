@@ -53,6 +53,7 @@ def gen_images(testname):
     count=0
     for t in data0:
         for k in t.keys():
+            colors = cc()
             windows=t[k]
             for win in windows:
                 x, y, w, h = win 
@@ -60,7 +61,7 @@ def gen_images(testname):
                 x1=x+w ; y1=y+h
                 win = coords2(k,(x0,y0,x1,y1),screen_dim)
                 if len(colors) < 1:
-                              colors = cc()
+                    colors = cc()
                 d.rectangle(win,fill="#"+colors.pop())
         fname=f"./ratio_pictures/img_{testname}_{count}.png"
         print(f"writing file: {fname} ")
