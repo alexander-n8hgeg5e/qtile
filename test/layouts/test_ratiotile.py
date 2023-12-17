@@ -210,7 +210,7 @@ def test_ratiotile_add_windows(manager):
             #assert thing2 == thing
         else:
             assert False
-        with open('/tmp/output_test_add_windows','wt') as f:
+        with open('./output_test_add_windows','wt') as f:
             f.write(repr(things)+"\n")
 
 
@@ -502,6 +502,6 @@ def test_resizing(manager):
     thing2 = sizes()
     things.append({"thing2" : thing2,"thing":thing})
     #assert thing2 == thing
-    with open('/tmp/output_test_resizing','wt') as f:
+    with open('./output_test_resizing','wt') as f:
         f.write(repr(things)+"\n")
 
