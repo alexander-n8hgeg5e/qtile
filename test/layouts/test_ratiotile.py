@@ -383,8 +383,12 @@ def test_shuffling(manager):
 
 @ratiotile_config
 def test_resizing(manager):
+    data=[]
+    from pprint import pformat
     def sizes():
-        return manager.c.layout.info()["layout_info"]
+        li=manager.c.layout.info()["layout_info"]
+        data.append(li)
+        return li
 
     def ratio():
         return manager.c.layout.info()["ratio"]
@@ -516,3 +520,5 @@ def test_resizing(manager):
         (0, 300, 400, 300),
         (400, 300, 400, 300),
     ]
+    with open("output_test_resizing","wt") as output_file:
+        output_file.write(pformat(data))
